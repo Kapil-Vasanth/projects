@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  /* background: linear-gradient(120deg, #f6d365, #fda085);  */
+  background: black;
+  color: Black;
+  font-family: "poppins", sans-serif;
+  min-height: 100vh;
+}
+.vid {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -2;
+}
+#video {
+  position: relative;
+  width: 100%;
+  height: 150vh;
+  top: 0;
+  left: 0;
+  transform: translateY(-15%);
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+  opacity: 20%;
+}
+img {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: top;
+  z-index: -3;
+}
+header {
+  font-size: 1.7rem;
+}
+.heading {
+  color: black;
+  font-weight: 700px;
+}
+h1 span {
+  animation: animate 4s ease infinite;
+}
+h1 span:nth-child(1) {
+  animation-delay: 0s;
+}
+h1 span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+h1 span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+h1 span:nth-child(4) {
+  animation-delay: 1s;
+}
+@keyframes animate {
+  0% {
+    font-color: #333;
+    text-shadow: none;
+  }
+  100% {
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff, 0 0 120px #fff, 0 0 140px #fff;
+  }
+}
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+form button {
+  color: #fda085;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  background: #fda085;
+  color: white;
+}
+.todo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+.todo {
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+.todo li {
+  flex: 1;
+}
+.trash-btn,
+.complete-btn {
+  background: #fc744f;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.complete-btn {
+  background: rgb(79, 236, 79);
+}
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.fall {
+  transform: translateY(8rem) rotatez(20deg);
+  opacity: 0;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+}
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+select {
+  color: #ff6f47;
+  font-size: 1rem;
+  width: 10rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+.select::after {
+  content: "\25bc";
+  position: absolute;
+  background: #ff6f47;
+  padding: 1rem;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.select:hover::after {
+  background: white;
+  color: #ff6f47;
+}
+
+/* If the screen size is 600px or less, set the font-size of <div> to 30px */
+@media only screen and (max-width: 650px) {
+  .heading {
+    font-size: 30px;
+  }
+  form input,
+  form button {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  select {
+    font-size: 0.7rem;
+    width: 7rem;
+    padding: 0.5rem;
+  }
+  .select::after {
+    font-size: 0.7rem;
+    padding: 0.5rem;
+  }
+  .todo {
+    font-size: 0.8rem;
+  }
+  .trash-btn,
+  .complete-btn {
+    padding: 0.5rem;
+    font-size: 0.7rem;
+  }
+}
